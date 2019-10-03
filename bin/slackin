@@ -15,6 +15,7 @@ args
   .option(['x', 'cors'], 'Enable CORS for all routes')
   .option(['C', 'coc'], 'Full URL to a CoC that needs to be agreed to')
   .option(['S', 'css'], 'Full URL to a custom CSS file to use on the main page')
+  .option(['H', 'redirect-to-https'], 'Redirect to HTTPS if set', !!(require('hostenv').REDIRECT_TO_HTTPS || process.env.REDIRECT_TO_HTTPS))
   .option(['?', 'help'], 'Show the usage information')
 
 var flags = args.parse(process.argv, {
